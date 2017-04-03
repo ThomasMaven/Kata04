@@ -4,13 +4,9 @@ package Model;
  * Created by ttomaka on 03.04.2017.
  */
 public class Day {
-    int dayNumber;
-    int maxTemp;
-    int minTemp;
-
-    public int getDayNumber() {
-        return dayNumber;
-    }
+    private int dayNumber;
+    private int maxTemp;
+    private int minTemp;
 
     public Day() {}
 
@@ -20,23 +16,13 @@ public class Day {
         this.minTemp = minTemp;
     }
 
-    public void setDayNumber(int dayNumber) {
-        this.dayNumber = dayNumber;
+
+    public int getDayNumber() {
+        return dayNumber;
     }
 
-    public int getMaxTemp() {
-        return maxTemp;
+    public int getTempDiff() {
+        return maxTemp - minTemp;
     }
 
-    public void setMaxTemp(int maxTemp) {
-        this.maxTemp = maxTemp;
-    }
-
-    public int getMinTemp() {
-        return minTemp;
-    }
-
-    public void setMinTemp(int minTemp) {
-        this.minTemp = minTemp;
-    }
 }
