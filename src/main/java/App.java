@@ -8,11 +8,11 @@ import Repo.LineRepo;
 public class App {
     public static void main(String[] args) {
         System.out.println("Weather Start");
-        String dayWithSmallestTempAmplitude = LineRepo.getLabelWithSmallestNumberDiff("src/main/resources/weather.dat", Day.class);
+        String dayWithSmallestTempAmplitude = LineRepo.getLabelWithSmallestNumberDiff(Day.class);
         System.out.println("Day with smallest diff is " + dayWithSmallestTempAmplitude);
 
         System.out.println("Football Start");
-        String teamWithSmallestGoalDifference = LineRepo.getLabelWithSmallestNumberDiff("src/main/resources/football.dat", Team.class);
+        String teamWithSmallestGoalDifference = LineRepo.getLabelWithSmallestNumberDiff(Team.class);
         System.out.println("Team with smallest goal difference is " + teamWithSmallestGoalDifference);
 
 
