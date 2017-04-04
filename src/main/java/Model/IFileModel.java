@@ -7,4 +7,5 @@ public interface IFileModel {
     int getLabelColumnIndex();
     int getNum1ColIndex();
     int getNum2ColIndex();
+    String getFilePath();
 }

@@ -13,11 +13,12 @@ import java.util.Scanner;
 public class LineRepo {
 
     private static int labelColumnNumber, number1ColumnNumber, number2ColumnNumber;
+    private static String filePath;
 
-    public static String getLabelWithSmallestNumberDiff(String filePath, Class<? extends IFileModel> modelClass) {
+    public static String getLabelWithSmallestNumberDiff(Class<? extends IFileModel> modelClass) {
         String labelToReturn = "";
         int minValue = -1;
-        initLabelNumbers(modelClass);
+        initModelVariables(modelClass);
 
         try {
             File file = new File(filePath);
@@ -49,12 +50,13 @@ public class LineRepo {
         return Math.max(labelColumnNumber, Math.max(number1ColumnNumber, number2ColumnNumber));
     }
 
-    private static void initLabelNumbers(Class<? extends IFileModel> modelClass) {
+    private static void initModelVariables(Class<? extends IFileModel> modelClass) {
         try {
             Object object = modelClass.newInstance();
             labelColumnNumber = (int) modelClass.getMethod("getLabelColumnIndex").invoke(object);
             number1ColumnNumber = (int) modelClass.getMethod("getNum1ColIndex").invoke(object);
             number2ColumnNumber = (int) modelClass.getMethod("getNum2ColIndex").invoke(object);
+            filePath = (String) modelClass.getMethod("getFilePath").invoke(object);
         } catch (IllegalAccessException | NoSuchMethodException | InstantiationException | InvocationTargetException e) {
             e.printStackTrace();
         }
