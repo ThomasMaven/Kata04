@@ -1,30 +1,24 @@
 package Model;
 
-import static java.lang.Math.abs;
 
 /**
  * Created by ttomaka on 03.04.2017.
  */
-public class Day {
-    private int dayNumber;
-    private int maxTemp;
-    private int minTemp;
+public class Day implements IFileModel {
+    private final int labelColumnIndex = 1;
+    private final int num1ColIndex = 2;
+    private final int num2ColIndex = 3;
 
-    public Day() {}
-
-    public Day(int dayNumber, int maxTemp, int minTemp) {
-        this.dayNumber = dayNumber;
-        this.maxTemp = maxTemp;
-        this.minTemp = minTemp;
+    public int getLabelColumnIndex() {
+        return labelColumnIndex;
     }
 
-
-    public int getDayNumber() {
-        return dayNumber;
+    public int getNum1ColIndex() {
+        return num1ColIndex;
     }
 
-    public int getTempDiff() {
-        return abs( maxTemp - minTemp );
+    public int getNum2ColIndex() {
+        return num2ColIndex;
     }
 
 }
