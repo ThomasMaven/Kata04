@@ -1,5 +1,7 @@
 package Model;
 
+import static java.lang.Math.abs;
+
 /**
  * Created by ttomaka on 03.04.2017.
  */
@@ -22,7 +24,7 @@ public class Day {
     }
 
     public int getTempDiff() {
-        return maxTemp - minTemp;
+        return abs( maxTemp - minTemp );
     }
 
 }
