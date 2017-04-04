@@ -57,7 +57,7 @@ public class LineRepo {
             number1ColumnNumber = (int) modelClass.getMethod("getNum1ColIndex").invoke(object);
             number2ColumnNumber = (int) modelClass.getMethod("getNum2ColIndex").invoke(object);
             filePath = (String) modelClass.getMethod("getFilePath").invoke(object);
-        } catch (IllegalAccessException | NoSuchMethodException | InstantiationException | InvocationTargetException e) {
+        } catch (IllegalAccessException|NoSuchMethodException|InstantiationException|InvocationTargetException e) {
             e.printStackTrace();
         }
     }
